@@ -1,0 +1,61 @@
+
+@import "tailwindcss";
+
+
+
+:root {
+  --primary: #021029;
+  --secondary: #00DBFC;
+  --rv-ternary:#01122F;
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans:  sans-serif; /* Updated font */
+  --rv-primary: #021029;
+--rv-bg-primary: #021029;
+--rv-secondary: #00DBFC;
+--rv-bg-secondary: #00DBFC;
+--rv-black: #000000;
+--rv-bg-black: #000000;
+--rv-white: #ffffff;
+--rv-bg-white: #ffffff;
+--rv-bg-light: #dddddd;
+--rv-bg-dark: #dddddd;
+--rv-bg-gradient: linear-gradient(45deg, black, transparent);
+--rv-font-body: 'Montserrat', sans-serif;
+}
+
+
+body {
+  background: var(--rv-ternary);
+  color: var(--foreground);
+  font-family: var(--rv-font-body);
+}
+
+
+.font-montserrat {
+  font-family: var(--rv-font-body);
+}
+
+.font-urbanist {
+  font-family: var(--rv-font-urbanist);
+}
+
+
+a,button{
+  cursor: pointer;
+}
+
+.padding-top-section{
+  padding-top: 60px;
+}
+
+.padding-bottom-section{
+  padding-bottom: 60px;
+}
+
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-color: var(--rv-ternary);
+  }
+}
