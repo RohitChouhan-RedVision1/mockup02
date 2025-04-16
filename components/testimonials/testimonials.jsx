@@ -76,13 +76,13 @@ export default function Testimonials() {
 
   return (
     <div className="bg-[var(--rv-bg-primary)] padding-bottom-section padding-top-section">
-      <div className="container mx-auto px-4 md:px-10">
+      <div className="container mx-auto px-4 lg:px-10">
         <div className="flex flex-col items-center text-white">
           <h2 className="text-4xl font-bold mb-6 text-center text-white">
             Our <span className="text-[var(--rv-secondary)]">Testimonials</span>
           </h2>
 
-          <div className="flex gap-6 w-full justify-center min-h-[300px] md:max-w-6xl mx-auto relative">
+          <div className="flex gap-6 w-full justify-center min-h-[300px] lg:max-w-6xl mx-auto relative">
             {/* Active Testimonial */}
             <div className="flex-1 bg-[#0C2442] rounded-md p-6 space-y-4 shadow-md border border-[#d4d4d42e]">
               <div className="flex items-center space-x-1 text-yellow-400 text-xl">
@@ -104,7 +104,7 @@ export default function Testimonials() {
             </div>
 
             {/* Thumbnails & Controls */}
-            <div className="hidden md:w-1/3 md:flex gap-4 relative h-72">
+            <div className="hidden lg:w-1/3 lg:flex gap-4 relative h-72">
               <div className="flex flex-col gap-4 w-full">
                 {getVisibleClients().map((client, idx) => {
                   const isActive = client.name === activeClient.name;
@@ -148,7 +148,7 @@ export default function Testimonials() {
             </div>
 
             {/* Mobile Nav */}
-            <div className="absolute right-0 bottom-[-50px] md:hidden flex gap-2">
+            <div className="absolute right-0 bottom-[-50px] lg:hidden flex gap-2">
               <button
                 onClick={prevSlide}
                 className="bg-[#0C2442] p-2 rounded shadow hover:bg-cyan-600 border border-[#d4d4d42e] rotate-90"
