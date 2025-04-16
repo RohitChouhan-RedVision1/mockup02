@@ -90,7 +90,7 @@ export default function AdvisorCategory() {
   return (
     <div className=" padding-top-section padding-bottom-section">
       <section className=" text-white   overflow-hidden">
-        <div className="container  mx-auto px-2 md:px-10 flex flex-col lg:flex-row gap-4 items-start">
+        <div className="container  mx-auto px-4 lg:px-10 flex flex-col lg:flex-row gap-4 items-start">
           {/* Left - Categories & Funds */}
           <div className="w-full lg:w-1/2 bg-[#01285B] rounded-2xl  p-4 lg:p-10">
             <h2 className="text-white text-center text-3xl font-bold mb-2">
@@ -181,7 +181,7 @@ export default function AdvisorCategory() {
           </div>
 
           {/* Right - Explore Mutual Funds */}
-          <div className="w-full lg:w-1/2  text-white p-6 md:py-36 rounded-xl">
+          <div className="w-full lg:w-1/2  text-white p-6 lg:py-36 rounded-xl">
             <h2 className="text-4xl font-bold mb-2">
               Explore <span className="text-[#00DBFC]">Mutual Funds</span>
             </h2>

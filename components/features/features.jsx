@@ -28,8 +28,8 @@ const features = [
 export default function Features() {
   return (
     <div className="padding-top-section padding-bottom-section">
-      <section className=" container mx-auto text-white px-10 ">
-        <div className=" grid md:grid-cols-2 gap-12 items-center">
+      <section className=" container mx-auto text-white px-4 lg:px-10 ">
+        <div className=" grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side content */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold">
@@ -62,8 +62,8 @@ export default function Features() {
           </div>
 
           {/* Right side image */}
-          <div className="flex justify-center relative md:top-40">
-            <div className="absolute bottom-0 md:left-30 w-[700px] h-[180px] md:h-[250px] bg-[#01122F] z-10 "></div>
+          <div className="flex justify-center relative lg:top-40">
+            <div className="absolute bottom-0 lg:left-30 w-[700px] h-[180px] lg:h-[250px] bg-[#01122F] z-10 "></div>
             <Image
               src="/icons/mobile1.png" // Replace this with actual mobile report image
               alt="Mobile Report"

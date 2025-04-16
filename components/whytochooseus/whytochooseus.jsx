@@ -77,13 +77,13 @@ const WhyChooseUs = () => {
         className=" text-white container mx-auto px-4 lg:px-10"
         ref={mainCounterRef}
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <h2 className="text-4xl md:text-4xl font-bold mb-6">
           Why <span className="text-cyan-400">Choose</span> Us?
         </h2>
-        <div className="flex flex-col md:flex-row items-start gap-10">
+        <div className="flex flex-col lg:flex-row items-start gap-10">
           {/* Left: Image + Paragraph (70%) */}
-          <div className="md:w-[65%] w-full space-y-6">
-            <div className="relative w-full h-[300px] md:h-[400px] rounded-md overflow-hidden">
+          <div className="lg:w-[65%] w-full space-y-6">
+            <div className="relative w-full h-[300px] lg:h-[400px] rounded-md overflow-hidden">
               <Image
                 src="/whytochoose.png"
                 alt="Analytics"
@@ -100,7 +100,7 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Right: Counters (30%) */}
-          <div className="md:w-[35%] w-full space-y-12">
+          <div className="lg:w-[35%] w-full space-y-12">
             <div className="count" data-step="1">
               <div
                 className="text-4xl font-bold text-cyan-400 counter-number"

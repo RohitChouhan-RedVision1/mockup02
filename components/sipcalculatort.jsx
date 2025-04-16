@@ -254,7 +254,7 @@ export default function SipCalculator({ siteData }) {
             Power of <span className="text-[var(--rv-secondary)]">SIP</span>
           </h2>
           {/* <SectionHeading heading="SIP Calculator" title="Power of SIP" variant="dark" /> */}
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-4 ">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 ">
             <div className="col-span-1 shadow-lg rounded-2xl bg-[#081D41] px-10 py-4 flex flex-col justify-between">
               <div className="input-fields mt-5">
                 <h2 className="text-4xl font-bold mb-6 text-white items-center text-center">

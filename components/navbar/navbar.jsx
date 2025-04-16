@@ -150,7 +150,7 @@ const Navbar = () => {
       }`}
     >
       <nav
-        className={` container mx-auto px-4 md:px-0 lg:px-10  transition-colors duration-300 `}
+        className={` container mx-auto px-4  lg:px-10  transition-colors duration-300 `}
       >
         <div className="  flex flex-wrap items-center justify-between mx-auto py-2 lg:py-6 px-3 md:px-0">
           <Link href="/" className="">
