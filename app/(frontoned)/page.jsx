@@ -13,10 +13,10 @@ import SiteSettingsModel from "@/lib/models/SiteSetting";
 import LatestNews from "@/components/latestnews";
 import { FAQ } from "@/components/faq/faq";
 import BseChartSection from "@/components/bsechartSection/bsechartSection";
-import SipCalculator from "@/components/sipcalculatort";
+
 import AdvisorCategory from "@/components/AdvisoryCategory/advisorycategory";
 import Features from "@/components/features/features";
-// import SipCalculator from "@/components/sipcalculatort";
+
 
 
 
@@ -39,7 +39,7 @@ export default async function Page() {
           <Features/>
           <AdvisorCategory/>
           <WhyChooseUs/>
-          <SipCalculator/>
+          <Calculator/>
           <BseChartSection/>
           <SubscribCard/>
           <Testimonials/>

@@ -5,46 +5,46 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Client One',
-    designation: 'Designation',
-    image: '/clients/client1.jpg',
+    name: 'Rohit',
+    designation: 'Devloper',
+    image: '/client.png',
     rating: 4,
-    text: 'Client One testimonial goes here.',
+    text: 'RedVsion has redefined my investment experience. Their AI-driven insights, transparent approach and customized strategies has given me complete confidence.Its not just about returns-its about clarity, trust and true wealth-building.',
   },
   {
-    name: 'Client Two',
-    designation: 'Designation',
-    image: '/clients/client2.jpg',
-    rating: 5,
-    text: 'Client Two testimonial goes here.',
-  },
-  {
-    name: 'Client Three',
-    designation: 'Designation',
-    image: '/clients/client3.jpg',
-    rating: 3,
-    text: 'Client Three testimonial goes here.',
-  },
-  {
-    name: 'Client Four',
-    designation: 'Designation',
-    image: '/clients/client4.jpg',
+    name: 'Harsh',
+    designation: 'CEO',
+    image: '/client.png',
     rating: 4,
-    text: 'Client Four testimonial goes here.',
+    text: 'RedVsion has redefined my investment experience. Their AI-driven insights, transparent approach and customized strategies has given me complete confidence.Its not just about returns-its about clarity, trust and true wealth-building.',
   },
   {
-    name: 'Client Five',
-    designation: 'Designation',
-    image: '/clients/client5.jpg',
-    rating: 5,
-    text: 'Client Five testimonial goes here.',
-  },
-  {
-    name: 'Client Six',
-    designation: 'Designation',
-    image: '/clients/client6.jpg',
+    name: 'Anuj',
+    designation: 'Founder',
+    image: '/client.png',
     rating: 4,
-    text: 'Client Six testimonial goes here.',
+    text: 'RedVsion has redefined my investment experience. Their AI-driven insights, transparent approach and customized strategies has given me complete confidence.Its not just about returns-its about clarity, trust and true wealth-building.',
+  },
+  {
+    name: 'Jay',
+    designation: 'Designer',
+    image: '/client.png',
+    rating: 4,
+    text: 'RedVsion has redefined my investment experience. Their AI-driven insights, transparent approach and customized strategies has given me complete confidence.Its not just about returns-its about clarity, trust and true wealth-building.',
+  },
+  {
+    name: 'Ajay',
+    designation: 'Sr. Devloper',
+    image: '/client.png',
+    rating: 4,
+    text: 'RedVsion has redefined my investment experience. Their AI-driven insights, transparent approach and customized strategies has given me complete confidence.Its not just about returns-its about clarity, trust and true wealth-building.',
+  },
+  {
+    name: 'Rahul',
+    designation: 'sales person',
+    image: '/client.png',
+    rating: 4,
+    text: 'RedVsion has redefined my investment experience. Their AI-driven insights, transparent approach and customized strategies has given me complete confidence.Its not just about returns-its about clarity, trust and true wealth-building.',
   },
 ];
 
@@ -54,11 +54,14 @@ export default function Testimonials() {
 
   // Show current + previous and next client for thumbnails
   const getVisibleClients = () => {
-    const visible = [];
-    if (activeIndex > 0) visible.push(testimonials[activeIndex - 1]);
-    visible.push(testimonials[activeIndex]);
-    if (activeIndex < testimonials.length - 1) visible.push(testimonials[activeIndex + 1]);
-    return visible;
+    const prevIndex = (activeIndex - 1 + testimonials.length) % testimonials.length;
+    const nextIndex = (activeIndex + 1) % testimonials.length;
+  
+    return [
+      testimonials[prevIndex],
+      testimonials[activeIndex],
+      testimonials[nextIndex],
+    ];
   };
 
   const nextSlide = () => {
@@ -84,13 +87,13 @@ export default function Testimonials() {
 
           <div className="flex gap-6 w-full justify-center min-h-[300px] lg:max-w-6xl mx-auto relative">
             {/* Active Testimonial */}
-            <div className="flex-1 bg-[#0C2442] rounded-md p-6 space-y-4 shadow-md border border-[#d4d4d42e]">
+            <div className="flex-1 jus  bg-[#0C2442] rounded-md p-6 space-y-4 shadow-md border border-[#d4d4d42e]">
               <div className="flex items-center space-x-1 text-yellow-400 text-xl">
                 {'★'.repeat(activeClient.rating)}
                 {'☆'.repeat(5 - activeClient.rating)}
               </div>
               <p className="text-lg text-white/80">{activeClient.text}</p>
-              <div className="flex items-center gap-4 pt-4">
+              <div className="flex items-end gap-4 pt-4">
                 <img
                   src={activeClient.image}
                   alt="Client"
@@ -105,7 +108,7 @@ export default function Testimonials() {
 
             {/* Thumbnails & Controls */}
             <div className="hidden lg:w-1/3 lg:flex gap-4 relative h-72">
-              <div className="flex flex-col gap-4 w-full">
+              <div className="flex flex-col  gap-4 w-full">
                 {getVisibleClients().map((client, idx) => {
                   const isActive = client.name === activeClient.name;
                   return (

@@ -49,7 +49,7 @@ export default function AdvisorCategory() {
         "https://redvisionweb.com/api/advisor-scheme-category-funds?apikey=351b03c24a79d2f40796037e0d8c2c49",
         { arnId, category: myId, schemeCategory }
       );
-      console.log(response.data.imageUrl);
+      console.log(response);
       setImageUrl(response.data.imageUrl);
       setCategoriesFunds(response?.data?.data || []);
     } catch (error) {
@@ -86,6 +86,8 @@ export default function AdvisorCategory() {
       </div>
     );
   };
+
+  console.log(categoriesFunds,categories)
 
   return (
     <div className=" padding-top-section padding-bottom-section">
