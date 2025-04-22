@@ -15,11 +15,11 @@ const MutualFunds = () => {
       {/* Heading and Subheading */}
 
       <div className="text-center items-center pt-[80px] pb-[50px]">
-        <h1 className="text-3xl font-bold text-gray-800">Mutual Funds</h1>
+        <h1 className="text-3xl font-bold text-white">Mutual Funds</h1>
         <div className="em_bar mx-auto">
           <div className="em_bar_bg" />
         </div>
-        <p className="text-xl text-gray-600 mt-2">
+        <p className="text-xl text-gray-100 mt-2">
           Smart Investments for Your Financial Goals
         </p>
 
@@ -32,7 +32,7 @@ const MutualFunds = () => {
       {/* Introduction with Image */}
       <div className="mb-8 flex flex-col md:flex-row items-center md:items-start">
         <div className="md:w-1/2">
-          <p className="text-lg text-gray-700 items-center text-justify">
+          <p className="text-lg text-gray-300 items-center text-justify">
             Mutual funds are an excellent way to grow your wealth while reducing
             individual investment risk. By pooling resources from multiple
             investors, mutual funds provide you with exposure to a variety of
@@ -40,7 +40,7 @@ const MutualFunds = () => {
             management, they offer a balanced approach to building wealth for
             both beginners and seasoned investors.
           </p>
-          <p className="text-lg text-gray-700 mt-2 text-justify items-center">
+          <p className="text-lg text-gray-300 mt-2 text-justify items-center">
             A mutual fund is a pool of funds collected from investors and
             invested in a diverse set of financial instruments like stocks,
             bonds, and other securities. These funds are managed by experienced
@@ -73,42 +73,42 @@ const MutualFunds = () => {
 
       {/* Types of Mutual Funds */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        <h2 className="text-2xl font-semibold text-gray-100 mb-4">
           Types of Mutual Funds
         </h2>
-        <ul className="list-disc pl-5 space-y-4">
+        <ul className="list-disc pl-5 space-y-4 text-gray-300">
           <li>
-            <h3 className="font-semibold text-gray-800">Equity Mutual Funds</h3>
-            <p className="text-gray-700">
+            <h3 className="font-semibold text-gray-200">Equity Mutual Funds</h3>
+            <p className="text-gray-300">
               Invest primarily in stocks. They carry higher risk but offer the
               potential for higher returns over the long term.
             </p>
           </li>
           <li>
-            <h3 className="font-semibold text-gray-800">Debt Mutual Funds</h3>
-            <p className="text-gray-700">
+            <h3 className="font-semibold text-gray-300">Debt Mutual Funds</h3>
+            <p className="text-gray-200">
               Invest in bonds and other fixed-income securities. These are less
               risky than equity funds, making them ideal for conservative
               investors.
             </p>
           </li>
           <li>
-            <h3 className="font-semibold text-gray-800">Hybrid Mutual Funds</h3>
-            <p className="text-gray-700">
+            <h3 className="font-semibold text-gray-300">Hybrid Mutual Funds</h3>
+            <p className="text-gray-200">
               A mix of equity and debt investments. They balance risk and
               return, making them suitable for moderate-risk investors.
             </p>
           </li>
           <li>
-            <h3 className="font-semibold text-gray-800">Index Funds</h3>
-            <p className="text-gray-700">
+            <h3 className="font-semibold text-gray-300">Index Funds</h3>
+            <p className="text-gray-200">
               These funds track a specific market index like the Nifty or
               Sensex, providing a passive investment strategy with lower costs.
             </p>
           </li>
           <li>
-            <h3 className="font-semibold text-gray-800">Liquid Funds</h3>
-            <p className="text-gray-700">
+            <h3 className="font-semibold text-gray-300">Liquid Funds</h3>
+            <p className="text-gray-200">
               Invest in short-term money market instruments like treasury bills
               and commercial papers. Suitable for investors looking for
               liquidity and low risk.
@@ -119,42 +119,42 @@ const MutualFunds = () => {
 
       {/* Features of Mutual Funds */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        <h2 className="text-2xl font-semibold text-gray-100 mb-4">
           Features of Mutual Funds
         </h2>
-        <ul className="list-disc pl-5 space-y-4">
+        <ul className="list-disc pl-5 space-y-4 text-gray-200">
           <li>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Diversification: Spread your investments across various asset
               classes to reduce risk.
             </p>
           </li>
           <li>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Professional Management: Your investment is managed by expert fund
               managers who make decisions based on market conditions.
             </p>
           </li>
           <li>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Liquidity: Mutual funds can be easily bought or sold, providing
               you with flexibility to access your money when needed.
             </p>
           </li>
           <li>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Affordable: You don’t need a large amount to start investing in
               mutual funds, making them accessible to a wide range of investors.
             </p>
           </li>
           <li>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Tax Benefits: Certain mutual funds like ELSS offer tax-saving
               opportunities under the relevant sections of tax laws.
             </p>
           </li>
           <li>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Transparency: Regular updates on fund performance and net asset
               value (NAV) ensure you stay informed about your investment.
             </p>
@@ -164,7 +164,7 @@ const MutualFunds = () => {
 
       {/* Conclusion and CTA */}
       <div className="text-center mt-8">
-        <p className="text-lg text-gray-700 mb-4">
+        <p className="text-lg text-gray-300 mb-4">
           Whether you&apos;re just starting out or are looking to diversify your
           portfolio, mutual funds are a great way to achieve your financial
           goals. With professional management, diversified investment options,

@@ -1,5 +1,5 @@
 import HeroSection from "@/components/herosection/herosection";
-import { ContactUs } from "@/components/ContactUs/contactus";
+
 import SubscribCard from "@/components/partners/partners";
 import AboutUsHome from "@/components/aboutushomepage/aboutushomeage";
 import Services from "@/components/Services/services";

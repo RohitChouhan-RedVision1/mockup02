@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const WhyChooseUs = () => {
   const mainCounterRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const isInView = useInView(mainCounterRef, { once: true, threshold: 0.3 });
 
   // Detect screen size
   useEffect(() => {
@@ -17,36 +19,16 @@ const WhyChooseUs = () => {
 
   // Observer for triggering counter animation
   useEffect(() => {
-    if (isMobile) return; // Skip on mobile
+    if (isMobile || !isInView) return;
 
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll(".count");
-            counters.forEach((counter) => {
-              if (!counter.classList.contains("counter-started")) {
-                startCounter(counter);
-                counter.classList.add("counter-started");
-              }
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (mainCounterRef.current) {
-      observer.observe(mainCounterRef.current);
-    }
-
-    return () => {
-      if (mainCounterRef.current) {
-        observer.unobserve(mainCounterRef.current);
+    const counters = mainCounterRef.current?.querySelectorAll(".count");
+    counters?.forEach((counter) => {
+      if (!counter.classList.contains("counter-started")) {
+        startCounter(counter);
+        counter.classList.add("counter-started");
       }
-    };
-  }, [isMobile]);
+    });
+  }, [isInView, isMobile]);
 
   // Counter logic
   const startCounter = (counter) => {
@@ -54,12 +36,10 @@ const WhyChooseUs = () => {
       counter.querySelector(".counter-number").getAttribute("data-target")
     );
     let current = 0;
-    console.log(target);
     const step =
       parseInt(counter.getAttribute("data-step")) ||
       (target >= 500 ? (target >= 5000 ? 500 : 20) : 1);
 
-    console.log(step);
     const interval = setInterval(() => {
       if (current < target) {
         current += step;
@@ -74,15 +54,26 @@ const WhyChooseUs = () => {
   return (
     <div className="bg-[var(--rv-ternary)] padding-top-section padding-bottom-section">
       <section
-        className=" text-white container mx-auto px-4 lg:px-10"
+        className="text-white container mx-auto px-4 lg:px-10"
         ref={mainCounterRef}
       >
-        <h2 className="text-4xl md:text-4xl font-bold mb-6">
+        <motion.h2
+          className="text-4xl md:text-4xl font-bold mb-6"
+          initial={{ x: -100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           Why <span className="text-cyan-400">Choose</span> Us?
-        </h2>
+        </motion.h2>
+
         <div className="flex flex-col lg:flex-row items-start gap-4">
-          {/* Left: Image + Paragraph (70%) */}
-          <div className="lg:w-[50%] w-full space-y-6">
+          {/* Left: Image + Paragraph (50%) */}
+          <motion.div
+            className="lg:w-[50%] w-full space-y-6"
+            initial={{ x: -100, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          >
             <div className="relative w-full h-[300px] lg:h-[400px] rounded-md overflow-hidden">
               <Image
                 src="/whytochoose.png"
@@ -97,10 +88,15 @@ const WhyChooseUs = () => {
               erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
               tation ullamcorper suscipit lobortis nisl ut aliquip.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Right: Counters (30%) */}
-          <div className="lg:w-[50%] w-full space-y-12 pl-0 lg:pl-10 ">
+          {/* Right: Counters (50%) */}
+          <motion.div
+            className="lg:w-[50%] w-full space-y-12 pl-0 lg:pl-10"
+            initial={{ x: 100, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          >
             <div className="count" data-step="1">
               <div
                 className="text-4xl font-bold text-cyan-400 counter-number"
@@ -160,7 +156,7 @@ const WhyChooseUs = () => {
                 People Managed
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

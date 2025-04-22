@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function AdvisorCategory() {
   const [categories, setCategories] = useState([]);
@@ -87,7 +88,7 @@ export default function AdvisorCategory() {
     );
   };
 
-  console.log(categoriesFunds,categories)
+
 
   return (
     <div className=" padding-top-section padding-bottom-section">
@@ -183,19 +184,43 @@ export default function AdvisorCategory() {
           </div>
 
           {/* Right - Explore Mutual Funds */}
-          <div className="w-full lg:w-1/2  text-white p-6 lg:py-36 rounded-xl">
-            <h2 className="text-4xl font-bold mb-2">
+          <motion.div
+            className="w-full lg:w-1/2 text-white p-6 lg:py-36 rounded-xl"
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="text-4xl font-bold mb-2"
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               Explore <span className="text-[#00DBFC]">Mutual Funds</span>
-            </h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+            </motion.h2>
+            <motion.p
+              className="text-white/80 text-lg leading-relaxed mb-6"
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
               erat volutpat.
-            </p>
-            <button className="bg-[#00DBFC] hover:bg-[#00dbfc96] text-white font-bold py-2 px-6 rounded-lg transition-all">
+            </motion.p>
+            <motion.button
+              className="bg-[#00DBFC] hover:bg-[#00dbfc96] text-white font-bold py-2 px-6 rounded-lg transition-all"
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               Explore More
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -4,6 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaMapLocation, FaPinterest, FaTwitter } from "react-icons/fa6";
 import { FaEnvelope, FaMap, FaPhone } from "react-icons/fa";
+import { motion } from "framer-motion"; 
+
+
+// Animation variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
 
 export function Footer({}) {
 
@@ -25,12 +43,16 @@ export function Footer({}) {
   
   ];
   return (
-<div className={`" bg-[var(--rv-bg-primary)] padding-top-section  pb-10 `}>
+<div className={`" bg-[var(--rv-bg-primary)] padding-top-section  pb-10 overflow-hidden`}>
 
       <footer >
       <section className=" container mx-auto px-3 md:px-5 lg:px-10 ">
         <div className="">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10" variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            >
             {/* About Us */}
             <div>
             <div className="">
@@ -38,7 +60,7 @@ export function Footer({}) {
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={150}
+                width={150} 
                 height={100}
               />
             </Link>
@@ -110,11 +132,15 @@ export function Footer({}) {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       
-      <div className="">
+      <motion.div variants={fadeRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          >
         <div className="container mx-auto mt-8 px-3 md:px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between">
           
         <div className="disclaimer-sec text-center border-b border-gray-200">
@@ -181,10 +207,13 @@ export function Footer({}) {
               </div>
             </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Copyright Section */}
-      <div className=" ">
+      <motion.div variants={fadeLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}>
         <div className="container mx-auto px-3 md:px-5 lg:px-18 mt-4 flex flex-col lg:flex-row items-center justify-between">
           {/* Logo */}
           
@@ -208,7 +237,7 @@ export function Footer({}) {
                 </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
     </div>
   );

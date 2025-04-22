@@ -34,8 +34,13 @@ import { footerData } from "@/data/footer";
 import Image from "next/image";
 // import SectionHeading from "./sectionHeading";
 import { SipHomeChart } from "@/components/charts/sipHomeChart";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Calculator({ siteData }) {
+  const mainCounterRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const isInView = useInView(mainCounterRef, { once: true, threshold: 0.3 });
   const FormSchema = z.object({
     username: z
       .string()
@@ -248,14 +253,21 @@ export default function Calculator({ siteData }) {
 
   return (
     <section className="bg-[var(--rv-ternary)] padding-top-section pb-2">
-      <div className="container mx-auto ">
+      <div className="container mx-auto " ref={mainCounterRef}>
         <div className=" px-4 lg:px-20  rounded-2xl">
-          <h2 className="text-4xl font-bold mb-6 text-white items-center text-center">
+          <motion.h2 className="text-4xl font-bold mb-6 text-white items-center text-center" initial={{ x: -100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             Power of <span className="text-[var(--rv-secondary)]">SIP</span>
-          </h2>
+          </motion.h2>
           {/* <SectionHeading heading="SIP Calculator" title="Power of SIP" variant="dark" /> */}
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 ">
-            <div className="col-span-1 shadow-lg rounded-2xl bg-[#081D41] px-10 py-4 flex flex-col justify-between">
+            <motion.div className="col-span-1 shadow-lg rounded-2xl bg-[#081D41] px-10 py-4 flex flex-col justify-between"
+            initial={{ x: -100, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            >
               <div className="input-fields mt-5">
                 <h2 className="text-4xl font-bold mb-6 text-white items-center text-center">
                   SIP Calculator
@@ -554,13 +566,20 @@ export default function Calculator({ siteData }) {
                   </Dialog>
                 )}
               </div>
-            </div>
+            </motion.div>
             <div className="col-span-1  flex flex-col gap-4">
-              <div className=" bg-[#081D41] rounded-2xl" id="graphId">
+              <motion.div className=" bg-[#081D41] rounded-2xl" id="graphId"
+               initial={{ y: -100, opacity: 0 }}
+               animate={isInView ? { y: 0, opacity: 1 } : {}}
+               transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+               >
                 <SipHomeChart piedata={result} title={"SIP Calculator"} />
                 
-              </div>
-              <div className="bg-[#081D41] rounded-2xl">
+              </motion.div>
+              <motion.div className="bg-[#081D41] rounded-2xl" initial={{ y: 100, opacity: 0 }}
+               animate={isInView ? { y: 0, opacity: 1 } : {}}
+               transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+               >
               {result && (
                   <div className="mt-4 px-12">
                     <div className="mb-2 text-left flex items-center justify-start gap-3">
@@ -588,7 +607,7 @@ export default function Calculator({ siteData }) {
                     </div>
                   </div>
                 )}
-              </div>
+              </motion.div>
             </div>
           </div>
           <div></div>
